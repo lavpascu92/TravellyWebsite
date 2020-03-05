@@ -1,0 +1,25 @@
+@mixin fontOpenSansLight($font-size) {
+    font-family: 'Open Sans', 'Verdana', 'Tahoma', sans-serif;
+    font-size: $font-size;
+    font-weight: 300;
+}
+@mixin fontOpenSansRegular($font-size) {
+    font-family: 'Open Sans', 'Verdana', 'Tahoma', sans-serif;
+    font-size: $font-size;
+    font-weight: 400;
+}
+@mixin fontMontserratRegular($font-size) {
+    font-family: 'Montserrat', 'Verdana', 'Tahoma', sans-serif;
+    font-size: $font-size;
+    font-weight: 400;
+}
+@mixin mediaQueryTablet {
+    @media (min-width: #{$breakpointTablet}){
+        @content;
+    }
+}
+@mixin mediaQueryDesktop {
+    @media (min-width: #{$breakpointDesktop}){
+        @content;
+    }
+}

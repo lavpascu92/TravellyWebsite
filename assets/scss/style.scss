@@ -1,0 +1,320 @@
+@import './partials/resets';
+@import './partials/variables';
+@import './partials/mixins';
+
+.container{
+    width: 85%;
+    margin: 0 auto;
+}
+.bg-gray{
+    background-color: $backgroundLavender;
+}
+.display_none{
+    display: none;
+}
+body{
+    position: relative;
+    scroll-behavior: smooth;
+}
+div#grid2{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    color: #eee;
+    div#logo{
+        justify-self: start;
+        i.fa-plane{
+            transform: rotate(-30deg);
+            @include mediaQueryTablet{
+                font-size: 1.25rem;
+            }
+            @include mediaQueryDesktop{
+                font-size: 1.5rem;
+            }
+        }
+        span{
+            @include fontOpenSansLight($font_M);
+            @include mediaQueryTablet{
+                @include fontOpenSansLight($font_L);
+            }
+            @include mediaQueryDesktop{
+                @include fontOpenSansLight($font_XL);
+            }
+        }
+
+    }
+    div#nav{
+        justify-self: end;
+        padding-top:5px;
+        i.fa-bars{
+            font-size: 1.25rem;
+            @include mediaQueryTablet{
+                font-size: 1.5rem;
+            }
+            @include mediaQueryDesktop{
+                font-size: 1.75rem;
+                padding-top: 6px;
+            }
+        }
+    }
+}
+div#backgroundPhoto{
+    width: 100%;
+    height: 450px;
+    background:linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../images/img2.jpg);
+    background-attachment: fixed;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+section#firstSection{
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-items: center;
+    div#firstSection_title h1{
+        @include fontOpenSansLight($font_XL);
+        color: #eee;
+        padding: 3em 0 1em 0;
+        text-align: center;
+        @include mediaQueryTablet{
+            @include fontOpenSansLight($font_XXL);
+        }
+        @include mediaQueryDesktop{
+            @include fontOpenSansLight($font_XXXL);
+            padding: 2.5em 0 0.5em 0;
+        }
+    }
+    div#firstSection_inputs input[type="text"]{
+        width: 130px;
+        height: 25px;
+        border: none;
+        background-color: $backgroundLavender;
+        @include mediaQueryTablet{
+            width: 200px;
+            height: 30px;
+        }
+        @include mediaQueryDesktop{
+            width: 250px;
+            height: 35px;
+        }
+        @include mediaQueryDesktop{
+            width: 300px;
+            height: 35px;
+        }
+        
+    }
+    div#firstSection_inputs input[type="submit"]{
+        position: relative;
+        right: 4px;
+        width: 40px;
+        height: 25px;
+        border: none;
+        font-weight: bold;
+        background-color: $accentColor1;
+        color: #eee;
+        @include mediaQueryTablet{
+            width: 50px;
+            height: 30px;
+        }
+        @include mediaQueryDesktop{
+            width: 80px;
+            height: 35px;
+        }
+        &:hover{
+            color: $accentColor1;
+            background-color: $accentColor2;
+        }
+    }
+}
+section#secondSection{
+    padding-bottom: 50px;
+    text-align: center;
+    div#secondSection_title{
+        h4{
+            @include fontMontserratRegular($font_S);
+            padding: 35px 0 15px 0;
+            font-weight: bold;
+            @include mediaQueryTablet{
+                @include fontMontserratRegular($font_M);
+                text-align: left;
+                font-weight: bold;
+            }
+        }
+        p{
+            @include fontMontserratRegular($font_XS); 
+            padding-bottom: 30px;
+            color: #333;
+            @include mediaQueryTablet{
+                @include fontMontserratRegular($font_S);
+                text-align: left;
+            }
+           
+        }
+    }
+    div#secondSection_cards{
+        @include mediaQueryTablet{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+         }
+         @include mediaQueryDesktop{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+         }
+        div.card{
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            width: 270px;
+            margin: 20px auto;
+            position: relative;
+            img{
+                width: 270px;
+                height: 200px;
+                filter: brightness(85%);
+            }
+            span.secondSection_prices{
+                position: absolute;
+                z-index: 2;
+                bottom: 130px;
+                right: 15px;
+                color: #eee;
+                @include fontMontserratRegular($font_XS);
+                font-weight: bold;
+                 
+            }
+            div.wrapper{
+                padding: 2px 16px;
+                h4{
+                    @include fontMontserratRegular($font_S);
+                    font-weight: bold;
+                    color: #222;
+                    margin: 10px 0;
+                }
+                p{
+                    @include fontMontserratRegular($font_XS);
+                    color: #444;
+                    line-height: 1.5em;
+                    margin: 10px 0;
+                }
+            }
+        }
+
+    }
+ }
+ section#thirdSection{
+    text-align: center;
+     h1{
+         @include fontOpenSansLight($font_XXL);
+         margin: 40px 0;
+         letter-spacing: 0.1em;
+         @include mediaQueryTablet{
+            text-align: left;
+         }
+     }
+     div#thirdSection_grid{
+        @include mediaQueryTablet{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 40px;
+            grid-auto-rows: 100px;
+            text-align: left;
+        }
+        @include mediaQueryDesktop{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-gap: 40px;
+            text-align: left;
+            line-height: 1.5em;
+        }
+    }
+     div{
+         h4.thirdSection_title{
+            @include fontMontserratRegular($font_S);
+            color: #222;
+            margin: 8px 0;
+            font-weight: bold;
+         }
+         @include mediaQueryDesktop{
+            @include fontMontserratRegular($font_M);
+         }
+         p.thirdSection_text{
+             line-height: 1.5em;
+             text-align: left;
+             margin: 10px 0;
+            @include fontMontserratRegular($font_XS);
+            color: #444;
+            @include mediaQueryDesktop{
+                @include fontMontserratRegular($font_S);
+             }
+     }
+ }
+}
+section#fourthSection{
+    margin: 60px auto;
+    text-align: center;
+    @include mediaQueryDesktop{
+        margin: 100px auto;
+    }
+    h4#fourthSection_title{
+        @include fontMontserratRegular($font_S);
+        font-weight: bold;
+        margin: 20px 0;
+    }
+    input[type="email"]{
+        width: 200px;
+        height: 25px;
+        background-color: $backgroundLavender;
+        border: none;
+        @include mediaQueryDesktop{
+            width: 300px;
+            height: 35px;
+        }
+    }
+    input[type="submit"]{
+        @include fontMontserratRegular($font_XS);
+        font-weight: bold;
+        background-color: $accentColor1;
+        color: #eee;
+        position: relative;
+        right: 4px;
+        border: none;
+        width: 100px;
+        height: 25px;
+        @include mediaQueryDesktop{
+            width: 130px;
+            height: 35px;
+        }
+        &:hover{
+            color: $accentColor1;
+            background-color: $accentColor2;
+        }
+    }
+}
+div#arrowUpBtn{
+    position: fixed;
+    right: 25px;
+    bottom: 30px;
+    color: #222;
+}
+footer{
+    padding: 25px;
+    
+    h5{
+        @include fontMontserratRegular($font_XS);
+        color: #666; 
+    }
+   div.container{
+       display: grid;
+       grid-template-columns: 1fr 1fr;
+       div#footer_links{
+           justify-self: end;
+           a.nav-links{
+               text-decoration: none;
+               color: #333;
+               @include fontMontserratRegular($font_XS);
+               font-weight: bold;
+               padding: 0 10px;
+               
+           }
+       }
+   }
+
+}
